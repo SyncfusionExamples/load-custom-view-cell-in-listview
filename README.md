@@ -1,5 +1,5 @@
-# How to load custom ViewCell in Xamarin.Forms ListView?
-This example demonstrate how to load custom ViewCell in Xamarin.Forms ListView.
+# How to load custom view cell in Xamarin.Forms ListView?
+This example demonstrate how to load custom view cell in Xamarin.Forms ListView.
 
 ## <a name="requirements-to-run-the-demo"></a>Requirements to run the demo ##
 
