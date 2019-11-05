@@ -24,7 +24,7 @@ namespace CustomViewCell.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
+            Syncfusion.ListView.XForms.iOS.SfListViewRenderer.Init();
             return base.FinishedLaunching(app, options);
         }
     }
