@@ -1,6 +1,32 @@
 # How to load custom view cell in Xamarin.Forms ListView?
 This example demonstrate how to load custom view cell in Xamarin.Forms ListView.
 
+## Sample
+
+```xaml
+<ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="adKey">
+                <local:AdView/>
+            </DataTemplate>
+            <DataTemplate x:Key="booksKey">
+                <Frame BorderColor="AliceBlue" Margin="5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="{Binding BookName}" Grid.Row="0" FontAttributes="Bold" />
+                        <Label Text="{Binding BookDescription}" Grid.Row="1" />
+                    </Grid>
+                </Frame>
+            </DataTemplate>
+            <local:BookTemplateSelector x:Key="dataSelector" BookTemplate="{StaticResource booksKey}" AdTemplate="{StaticResource adKey}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <syncfusion:SfListView x:Name="myListView" SelectionMode="None" AutoFitMode="Height" ItemTemplate="{StaticResource dataSelector}" ItemsSource="{Binding BookInfo}" ItemSize="50"/>
+```
+
 ## <a name="requirements-to-run-the-demo"></a>Requirements to run the demo ##
 
 * [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) or [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/).
